@@ -1,0 +1,39 @@
+<% include partials/header.ejs %>
+<div class="ui main text container">
+    <div class="ui huge header">Blog Here..</div>
+    <div class="ui top attached segment">
+        <div class="ui divided items">
+         <% blog.forEach(elements=>{ %>
+        <div class="item">
+            <div class="image">
+                <img src="<%= elements.img %>">
+            </div>
+             <div class="content">
+                <a class="header" href="/blogs/<%=elements._id %>"></a>
+                <div class="meta">
+                    <span><%=elements.created.toDateString()%></span>
+                </div>
+                <div class="description">
+                    <p><%= elements.description.substring(0,100) %>...</p>
+                </div>
+                <div class="extra">
+                    <a class="ui flooted basic violet button" href="/blogs/<%=elements._id %>">Read More
+                    <i class="right chevron icon"></i>
+                    </a>
+                </div>
+            </div>
+          
+     
+       
+    </div>
+     <a href="/blogs/<%=elements._id %>">Read More</a>
+     <% }) %>
+   
+        </div>
+    </div>
+</div>
+
+
+
+<% include partials/footer.ejs %>
+
